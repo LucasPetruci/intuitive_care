@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 
 web_scraping/downloads.zip
+data_transformation/rol_de_procedimentos.csv
