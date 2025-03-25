@@ -15,18 +15,6 @@ Este módulo realiza o web scrapping para acessar a página de atualização do 
    Recomenda-se criar um ambiente virtual para isolar as dependências do projeto. Consulte a documentação do venv em:
    https://docs.python.org/3/library/venv.html
 
-   - No Windows, exemplo de comandos:
-      ```bash
-     python -m venv .venv
-      .venv\Scripts\activate
-      ```
-
-   - No Linux/macOS, exemplo de comandos:
-     ```bash
-     python3 -m venv .venv
-     source .venv/bin/activate
-     ```
-
 3. Instale as Dependências:
    Certifique-se de que o arquivo requirements.txt está atualizado e instale as dependências:
    ```bash
