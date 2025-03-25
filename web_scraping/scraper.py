@@ -1,4 +1,6 @@
 import time
+import os
+import requests
 from selenium.webdriver.common.by import By
 from urllib.parse import urljoin
 
@@ -17,7 +19,20 @@ def get_pdf_link(driver):
             pdf_links.append(absolute_link)
             print(f"Found PDF: {absolute_link}")
     return pdf_links
+
+def download_pdf(driver, pdf_link, download_folder):
+    for link in pdf_link:
+        os.makedirs(download_folder, exist_ok=True)
+        filename = link.split("/")[-1]
+        filepath = os.path.join(download_folder, filename)
         
+        response = requests.get(link)
+        if response.status_code == 200:
+            with open(filepath, "wb") as f:
+                f.write(response.content)
+            print(f"Arquivo salvo em: {filepath}")
+        else:
+            print(f"Falha ao baixar: {pdf_link}")
 
 def wait_and_close(driver, seconds):
     time.sleep(seconds)
