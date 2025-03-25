@@ -2,6 +2,7 @@ import tabula
 import zipfile
 import os
 import pdfplumber
+import pandas as pd
 
 # Extract tables from PDF file and save it as CSV file
 def convert_pdf_to_csv(pdf_path, output_csv):
@@ -42,6 +43,20 @@ def extract_footer(pdf_path):
             
             print(abbreviations)
             return abbreviations
+        
+
+# Loop through all columns in the CSV file and replace abbreviations with their descriptions        
+def replace_abbreviations_in_csv(csv_path, abbreviations):
+    df = pd.read_csv(csv_path)
+
+    for col in df.columns:
+        for abbreviation, description in abbreviations.items():
+            if df[col].astype(str).str.contains(abbreviation).any():
+                df[col] = df[col].str.replace(abbreviation, description, regex=False)
+
+    df.to_csv(csv_path, index=False)
+    print(f"Abbreviations replaced in {csv_path}")
+
        
     
         
