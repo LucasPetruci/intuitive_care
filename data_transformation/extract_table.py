@@ -13,14 +13,12 @@ def convert_pdf_to_csv(pdf_path, output_csv):
         pages="3-181",
     )
     
-    print(f"Table extracted from {pdf_path} and saved as {output_csv}")
-    
+   
 def csv_to_zip(csv_name, zip_name):
     with zipfile.ZipFile(zip_name, "w") as zipf:
-        zipf.write(csv_name, os.path.basename(csv_name))
-    
-    print(f"{csv_name} saved as {zip_name}")
-    
+        zipf.write(csv_name, os.path.basename(csv_name))    
+
+
 def extract_footer(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
         last_page = pdf.pages[-1]  
@@ -56,8 +54,3 @@ def replace_abbreviations_in_csv(csv_path, abbreviations):
 
     df.to_csv(csv_path, index=False)
     print(f"Abbreviations replaced in {csv_path}")
-
-       
-    
-        
-    
