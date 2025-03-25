@@ -18,7 +18,6 @@ def get_pdf_link(driver):
         if href and href.lower().endswith(".pdf") and ("Anexo I" in text or "Anexo II" in text):
             absolute_link = urljoin(driver.current_url, href)
             pdf_links.append(absolute_link)
-            print(f"Found PDF: {absolute_link}")
     return pdf_links
 
 def download_pdf(pdf_link, download_folder):
@@ -31,16 +30,14 @@ def download_pdf(pdf_link, download_folder):
         if response.status_code == 200:
             with open(filepath, "wb") as f:
                 f.write(response.content)
-            print(f"Arquivo salvo em: {filepath}")
         else:
-            print(f"Falha ao baixar: {pdf_link}")
+            return f"Erro ao baixar o arquivo: {response.status_code, response.reason}"
 
 def compress_file(download_folder, zip_filename):
     with zipfile.ZipFile(zip_filename, "w") as zipf:
         for root, _, files in os.walk(download_folder):
             for file in files:
                 zipf.write(os.path.join(root, file), file)
-    print(f"Arquivos comprimidos em: {zip_filename}")
     
 def wait_and_close(driver, seconds):
     time.sleep(seconds)
