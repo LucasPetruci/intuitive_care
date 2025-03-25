@@ -20,7 +20,7 @@ def get_pdf_link(driver):
             print(f"Found PDF: {absolute_link}")
     return pdf_links
 
-def download_pdf(driver, pdf_link, download_folder):
+def download_pdf(pdf_link, download_folder):
     for link in pdf_link:
         os.makedirs(download_folder, exist_ok=True)
         filename = link.split("/")[-1]
