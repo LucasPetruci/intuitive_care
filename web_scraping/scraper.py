@@ -1,6 +1,7 @@
 import time
 import os
 import requests
+import zipfile
 from selenium.webdriver.common.by import By
 from urllib.parse import urljoin
 
@@ -34,6 +35,13 @@ def download_pdf(pdf_link, download_folder):
         else:
             print(f"Falha ao baixar: {pdf_link}")
 
+def compress_file(download_folder, zip_filename):
+    with zipfile.ZipFile(zip_filename, "w") as zipf:
+        for root, _, files in os.walk(download_folder):
+            for file in files:
+                zipf.write(os.path.join(root, file), file)
+    print(f"Arquivos comprimidos em: {zip_filename}")
+    
 def wait_and_close(driver, seconds):
     time.sleep(seconds)
     driver.close()
