@@ -1,4 +1,3 @@
-import pandas as pd
 import tabula
 
 # Extract tables from PDF file and save it as CSV file
