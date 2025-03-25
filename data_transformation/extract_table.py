@@ -1,20 +1,14 @@
 import pandas as pd
 import tabula
 
-# Extract tables from PDF file
-def extract_table_from_pdf(pdf_path):
-    print(f"Extraindo tabelas do PDF: {pdf_path}")
-    tables = tabula.read_pdf(pdf_path, pages="3-181", multiple_tables=True)
-    if not tables:
-        raise ValueError("Nenhuma tabela encontrada no PDF.")
-    print(f"{len(tables)} tabelas extraídas.")
-    return tables
-
-def save_table_to_csv(tables, output_csv):
-    if not tables:
-        raise ValueError("Nenhuma tabela encontrada.")
+# Extract tables from PDF file and save it as CSV file
+def convert_pdf_to_csv(pdf_path, output_csv):
+    tabula.convert_into(
+        input_path=pdf_path,
+        output_path=output_csv,
+        output_format="csv",
+        pages="3-181",
+    )
     
-    df = pd.concat(tables, ignore_index=True)
-    df.to_csv(output_csv, index=False)
-    print(f"Dados extraídos e salvos em: {output_csv}")
-    return df
+    print(f"Table extracted from {pdf_path} and saved as {output_csv}")
+    
