@@ -25,7 +25,7 @@ DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
---SELECT * FROM operadoras_ativas;
+-- SELECT * FROM operadoras_ativas;
 
 -- 1T2023
 COPY demonstracoes_contabeis(
@@ -127,6 +127,33 @@ DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
+--3T2024
+COPY demonstracoes_contabeis(
+    data,
+    registro_ans,
+    cd_conta_contabil,
+    descricao,
+    vl_saldo_inicial,
+    vl_saldo_final
+)
+FROM '/var/lib/postgresql/data/3T2024.csv'
+DELIMITER ';'
+CSV HEADER
+ENCODING 'UTF8';
+
+--4T2024
+COPY demonstracoes_contabeis(
+    data,
+    registro_ans,
+    cd_conta_contabil,
+    descricao,
+    vl_saldo_inicial,
+    vl_saldo_final
+)
+FROM '/var/lib/postgresql/data/4T2024.csv'
+DELIMITER ';'
+CSV HEADER
+ENCODING 'UTF8';
 
 -- SELECT * FROM demonstracoes_contabeis;
 
