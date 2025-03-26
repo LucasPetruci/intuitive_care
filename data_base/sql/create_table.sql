@@ -1,3 +1,5 @@
+-- DROP TABLE IF EXISTS demonstracoes_contabeis;
+-- DROP TABLE IF EXISTS operadoras_ativas;
 CREATE TABLE operadoras_ativas (
     id SERIAL PRIMARY KEY,
     registro_ans VARCHAR(6) UNIQUE,
@@ -22,4 +24,14 @@ CREATE TABLE operadoras_ativas (
     data_registro_ans DATE
 );
 
+--set saldo_inicial and saldo_final to TEXT bc in csv file is using "," as decimal separator. Convert to numeric later after import
+CREATE TABLE demonstracoes_contabeis (
+    id SERIAL PRIMARY KEY,
+    data DATE,
+    registro_ans VARCHAR(20) NOT NULL,
+    cd_conta_contabil VARCHAR(20),
+    descricao TEXT,
+    vl_saldo_inicial TEXT,
+    vl_saldo_final TEXT
+);
 
