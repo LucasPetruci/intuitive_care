@@ -161,9 +161,3 @@ ENCODING 'UTF8';
 -- FROM demonstracoes_contabeis
 -- ORDER BY data DESC
 -- LIMIT 10;
-
-
-
-
-
-
