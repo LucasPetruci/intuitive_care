@@ -31,7 +31,7 @@ Por padrão, o driver está configurado para utilizar o Chrome. Se desejar usar 
 
 
 ## 2 - Tranformação de dados
-Este módulo extrai os dados dos pdf buscados na parte 1, salva em formato .csv, compacta em um arquivo chamadao Teste_lucas_petruci.zip, e substitui OD e AMB por sua descrição completa
+Este módulo extrai os dados do PDF do Anexo I baixado na parte 1, salva em formato .csv, compacta em um arquivo chamado Teste_lucas_petruci.zip, e substitui OD e AMB por sua descrição completa
 
 
 ### Como Rodar
