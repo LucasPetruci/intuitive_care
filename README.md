@@ -1,4 +1,6 @@
-# Este projeto foi feito utilizando Python 3.10.11
+# Intuitive Care
+
+ Este projeto foi feito utilizando Python 3.10.11 e postgres 13.4
 
 ## 1 - Web Scrapping
 
