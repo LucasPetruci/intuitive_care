@@ -28,3 +28,23 @@ Este módulo realiza o web scrapping para acessar a página de atualização do 
 ### Alterando o Driver
 
 Por padrão, o driver está configurado para utilizar o Chrome. Se desejar usar outro navegador, edite o arquivo driver_config.py.
+
+
+## 2 - Tranformação de dados
+Este módulo extrai os dados dos pdf buscados na parte 1, salva em formato .csv, compacta em um arquivo chamadao Teste_lucas_petruci.zip, e substitui OD e AMB por sua descrição completa
+
+
+### Como Rodar
+   1. Rode a parte 1 para ter os arquivos em .pdf
+      
+   2. Navegue até a pasta do projeto:
+   ```bash
+      cd data_transformation
+   ```
+   3. Execute o Script Principal:
+   ```bash
+       python main.py
+   ```
+
+
+
