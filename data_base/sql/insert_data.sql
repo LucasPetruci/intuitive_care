@@ -27,7 +27,7 @@ ENCODING 'UTF8';
 
 -- SELECT * FROM operadoras_ativas;
 
-1T2023
+-- 1T2023
 COPY demonstracoes_contabeis(
   data,
   registro_ans,
@@ -55,14 +55,57 @@ DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
+-- 3T2023
+COPY demonstracoes_contabeis(
+  data,
+  registro_ans,
+  cd_conta_contabil,
+  descricao,
+  vl_saldo_inicial,
+  vl_saldo_final
+)
+FROM '/var/lib/postgresql/data/3T2023.csv'
+DELIMITER ';'
+CSV HEADER
+ENCODING 'UTF8';
+
+-- 4T2023
+COPY demonstracoes_contabeis(
+  data,
+  registro_ans,
+  cd_conta_contabil,
+  descricao,
+  vl_saldo_inicial,
+  vl_saldo_final
+)
+FROM '/var/lib/postgresql/data/4T2023.csv'
+DELIMITER ';'
+CSV HEADER
+ENCODING 'UTF8';
+
+--This select is for unformat data in csv, are using DD/MM/YYYY
+-- SELECT *
+-- FROM demonstracoes_contabeis
+-- WHERE data LIKE '__/__/____';
+
+--Update data to YYYY-MM-DD
+UPDATE demonstracoes_contabeis
+SET data = TO_CHAR(TO_DATE(data, 'DD/MM/YYYY'), 'YYYY-MM-DD')
+WHERE data LIKE '__/__/____';
+
+--Finally convert data to DATE
+ALTER TABLE demonstracoes_contabeis
+ALTER COLUMN data TYPE DATE
+USING TO_DATE(data, 'YYYY-MM-DD');
+
+
+
 -- SELECT * FROM demonstracoes_contabeis;
 
 -- SELECT *
 -- FROM demonstracoes_contabeis
 -- ORDER BY data DESC
 -- LIMIT 10;
-
-
 
 
 
