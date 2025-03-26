@@ -24,10 +24,12 @@ CREATE TABLE operadoras_ativas (
     data_registro_ans DATE
 );
 
---set saldo_inicial and saldo_final to TEXT bc in csv file is using "," as decimal separator. Convert to numeric later after import
+
+--set saldo_inicial and saldo_final to TEXT bc in csv file is using "," as decimal separator. Convert to numeric later after import.
+--File 4T2023.csv is using date as DD-MM-YYYY. Convert to YYYY-MM-DD later after import.
 CREATE TABLE demonstracoes_contabeis (
     id SERIAL PRIMARY KEY,
-    data DATE,
+    data TEXT,
     registro_ans VARCHAR(20) NOT NULL,
     cd_conta_contabil VARCHAR(20),
     descricao TEXT,
