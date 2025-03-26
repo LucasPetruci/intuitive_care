@@ -176,3 +176,4 @@ cython_debug/
 web_scraping/downloads.zip
 data_transformation/rol_de_procedimentos.csv
 data_transformation/Teste_lucas_petruci.zip
+.vscode
