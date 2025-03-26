@@ -25,7 +25,7 @@ DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
--- SELECT * FROM operadoras_ativas;
+--SELECT * FROM operadoras_ativas;
 
 -- 1T2023
 COPY demonstracoes_contabeis(
@@ -98,6 +98,34 @@ ALTER TABLE demonstracoes_contabeis
 ALTER COLUMN data TYPE DATE
 USING TO_DATE(data, 'YYYY-MM-DD');
 
+
+--1T2024
+COPY demonstracoes_contabeis(
+    data,
+    registro_ans,
+    cd_conta_contabil,
+    descricao,
+    vl_saldo_inicial,
+    vl_saldo_final
+)
+FROM '/var/lib/postgresql/data/1T2024.csv'
+DELIMITER ';'
+CSV HEADER
+ENCODING 'UTF8';
+
+--2T2024
+COPY demonstracoes_contabeis(
+    data,
+    registro_ans,
+    cd_conta_contabil,
+    descricao,
+    vl_saldo_inicial,
+    vl_saldo_final
+)
+FROM '/var/lib/postgresql/data/2T2024.csv'
+DELIMITER ';'
+CSV HEADER
+ENCODING 'UTF8';
 
 
 -- SELECT * FROM demonstracoes_contabeis;
