@@ -155,6 +155,15 @@ DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
+UPDATE demonstracoes_contabeis
+SET vl_saldo_inicial = REPLACE(vl_saldo_inicial, ',', '.')::NUMERIC,
+    vl_saldo_final = REPLACE(vl_saldo_final, ',', '.')::NUMERIC;
+
+
+-- SELECT vl_saldo_inicial, vl_saldo_final
+-- FROM demonstracoes_contabeis
+-- LIMIT 100;
+
 -- SELECT * FROM demonstracoes_contabeis;
 
 -- SELECT *
