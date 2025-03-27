@@ -41,12 +41,29 @@ Este módulo extrai os dados do PDF do Anexo I baixado na parte 1, salva em form
       
    2. Navegue até a pasta do projeto:
    ```bash
-      cd data_transformation
+   cd data_transformation
    ```
    3. Execute o Script Principal:
    ```bash
-       python main.py
+   python main.py
    ```
 
+## 3 - Banco de dados
+Neste módulo, temos os scripts .sql que criam as tabelas, inserem dados no banco de dados PostgreSQL e realizam as Query. Utilizei o PostgreSQL 13.4 em conjunto com o Docker para facilitar o processo de instalação e execução.
 
-
+### Como Configurar o Banco de dados (pode ser feito de outras formas)
+  1. Criar e Rodar o conteiner docker
+  
+   ```bash
+   docker run --name postgres-container -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres:13.4
+   ```
+  2. Utilize os valores usados para criar o container para conectar ao SQLTools
+    
+  3. Criar Database
+  ```bash
+  CREATE DATABASE intuitive_care_db
+  ```
+ 4. Para conectar-se ao banco de dados utilizando o SQLTools no VSCode, utilize as seguintes credenciais do conteiner
+    
+ 5. Acesse a pasta data_base/sql, primeiro rode o create_table.sql, depois o insert_data.sql(caso necessario mude o path) e depois o queries.sql
+ 
