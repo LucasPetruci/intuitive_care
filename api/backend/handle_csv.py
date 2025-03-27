@@ -14,4 +14,4 @@ def read_csv(path):
     
         return df
     except Exception as e:
-        return {"error": str(e)}
+        raise Exception(f"Failed to read CSV: {str(e)}")
