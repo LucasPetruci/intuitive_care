@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import pandas as pd
-from read_csv import read_csv
+from handle_csv import read_csv
 
 app = FastAPI()
 path = "../../data_base/data/operadoras_ativas/Relatorio_cadop.csv"
