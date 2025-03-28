@@ -1,6 +1,5 @@
 from fastapi import FastAPI, HTTPException
-import pandas as pd
-from handle_csv import read_csv, search_in_csv
+from handle_csv import search_in_csv
 
 app = FastAPI()
 path = "../../data_base/data/operadoras_ativas/Relatorio_cadop.csv"
