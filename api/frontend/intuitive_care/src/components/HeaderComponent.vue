@@ -1,6 +1,6 @@
 <template>
   <header class="main-header">
-    <img src="../assets/intuitive-care.png" alt="Logo" class="logo" />
+    <img src="../assets/header-intuitive-care.png" alt="Logo" class="logo" />
   </header>
 </template>
 
