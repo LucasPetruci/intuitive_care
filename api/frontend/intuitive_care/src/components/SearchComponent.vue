@@ -2,23 +2,30 @@
   <div class="search-container">
     <h2>Buscar no CSV</h2>
     
-    <label for="search">Busca:</label>
-    <input
-      v-model="searchValue"
-      type="text"
-      id="search"
-      placeholder="Digite o valor a buscar"
-    />
+    <div class="inputs-row">
+        <div class="input-group">
+            <label for="search" class="label">Buscar:</label>
+            <input
+            v-model="searchValue"
+            type="text"
+            id="search"
+            class="input"
+            placeholder="Digite o que deseja buscar"
+            />
+        </div>
 
-    <label for="column">Coluna:</label>
-    <input
-      v-model="searchColumn"
-      type="text"
-      id="column"
-      placeholder="Deixe vazio para buscar em todas as colunas"
-    />
-
-    <button @click="performSearch">Buscar</button>
+        <div class="input-group">
+            <label for="column" class="label">Coluna:</label>
+            <input
+            v-model="searchColumn"
+            type="text"
+            id="column"
+            class="input"
+            placeholder="Deixe vazio para buscar em todas as colunas"
+            />
+        </div>
+          <button class="button-search" @click="performSearch">Buscar</button>
+    </div>
 
     <div v-if="errorMessage" class="error">
       {{ errorMessage }}
@@ -93,9 +100,40 @@ export default {
 </script>
 
 <style scoped>
+.button-search {
+  padding: 0.5rem 1rem;
+  background-color: #c8a4f4;
+  color: black;
+  border: 2px solid black;
+}
+.inputs-row {
+  display: flex;        
+  gap: 1rem;             
+  align-items: center;   
+  margin-bottom: 1rem;   
+}
+.input-group {
+  display: flex;        
+  flex-direction: row;   
+  align-items: center;   
+  gap: 0.5rem;           
+}
+.input{
+    width: 40ch;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    size: 1rem;
+}
+
+.label{
+    font-size: 1.2rem;
+    color: black;
+}
+
 .search-container {
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .error {
