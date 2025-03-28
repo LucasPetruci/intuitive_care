@@ -1,57 +1,57 @@
 <template>
   <div class="search-container">
-    <h2>Buscar no CSV</h2>
-    
+    <h2>Busca textual no CSV</h2>
+     
     <div class="inputs-row">
-        <div class="input-group">
-            <label for="search" class="label">Buscar:</label>
-            <input
-            v-model="searchValue"
-            type="text"
-            id="search"
-            class="input"
-            placeholder="Digite o que deseja buscar"
-            />
-        </div>
+      <div class="input-group">
+        <label for="search" class="label">Buscar:</label>
+        <input
+          v-model="searchValue"
+          type="text"
+          id="search"
+          class="input"
+          placeholder="Digite o que deseja buscar"
+        />
+      </div>
 
-        <div class="input-group">
-            <label for="column" class="label">Coluna:</label>
-            <input
-            v-model="searchColumn"
-            type="text"
-            id="column"
-            class="input"
-            placeholder="Deixe vazio para buscar em todas as colunas"
-            />
-        </div>
-          <button class="button-search" @click="performSearch">Buscar</button>
+      <div class="input-group">
+        <label for="column" class="label">Coluna:</label>
+        <input
+          v-model="searchColumn"
+          type="text"
+          id="column"
+          class="input"
+          placeholder="Deixe vazio para buscar em todas as colunas"
+        />
+      </div>
+      <button class="button-search" @click="performSearch">Buscar</button>
     </div>
 
     <div v-if="errorMessage" class="error">
       {{ errorMessage }}
     </div>
+  </div>
 
-    <div v-if="searchExecuted">        
-        <div v-if="results.length">
-        <h3>Resultados ({{ results.length }})</h3>
-        <table>
-            <thead>
-            <tr>
-                <th v-for="(value, key) in results[0]" :key="key">{{ key }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="(row, rowIndex) in results" :key="rowIndex">
-                <td v-for="(value, key) in row" :key="key">
-                {{ value }}
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-        <div v-else>
-        <p>Nenhum resultado encontrado.</p>
-        </div>
+  <div class="results-container" v-if="searchExecuted">
+    <div v-if="results.length">
+      <h3>Resultados encontrados: {{ results.length }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th v-for="(value, key) in results[0]" :key="key">{{ key }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(row, rowIndex) in results" :key="rowIndex">
+            <td v-for="(value, key) in row" :key="key">
+              {{ value }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-else>
+      <p>Nenhum resultado encontrado.</p>
     </div>
   </div>
 </template>
@@ -100,40 +100,49 @@ export default {
 </script>
 
 <style scoped>
+.search-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.results-container {
+  width: 95%;
+  margin: 0 auto; 
+}
+
 .button-search {
   padding: 0.5rem 1rem;
   background-color: #c8a4f4;
   color: black;
   border: 2px solid black;
 }
+
 .inputs-row {
   display: flex;        
   gap: 1rem;             
   align-items: center;   
   margin-bottom: 1rem;   
 }
+
 .input-group {
   display: flex;        
   flex-direction: row;   
   align-items: center;   
   gap: 0.5rem;           
 }
-.input{
-    width: 40ch;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    size: 1rem;
+
+.input {
+  width: 40ch;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-.label{
-    font-size: 1.2rem;
-    color: black;
-}
-
-.search-container {
-  max-width: 600px;
+.label {
+  font-size: 1.2rem;
+  color: black;
 }
 
 .error {
@@ -145,11 +154,16 @@ table {
   margin-top: 1rem;
   border-collapse: collapse;
   width: 100%;
+  table-layout: fixed;
   border: 1px solid #ccc;
 }
 
 th, td {
   border: 1px solid #ccc;
   padding: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
+
 </style>
