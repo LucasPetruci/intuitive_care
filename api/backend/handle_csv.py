@@ -19,6 +19,14 @@ def read_csv(path):
 def search_in_csv(search_value: str, column_search: str, path: str):
     try:
         df = read_csv(path)
+        
+        # Check if column_search is empyt
+        if not column_search.strip():
+            search_value = search_value.lower()
+            mask = df.astype(str).apply(lambda col: col.str.lower().str.contains(search_value, na=False))
+            results = df[mask.any(axis=1)]
+            return results.to_dict(orient='records')
+               
         # Remove spaces and underscores and convert to lowercase
         column_search = column_search.strip().lower().replace(" ", "").replace("_", "")
         df_columns_lower = [col.strip().lower().replace(" ", "").replace("_", "") 
