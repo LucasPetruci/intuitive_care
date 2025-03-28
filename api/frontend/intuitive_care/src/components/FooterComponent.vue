@@ -13,6 +13,8 @@ export default {
 <style scoped>
 
 .main-footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   padding: 0.1rem;
   background-color: #c8a4f4;
