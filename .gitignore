@@ -173,7 +173,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-web_scraping/downloads.zip
+web_scraping/src/downloads.zip
 data_transformation/rol_de_procedimentos.csv
 data_transformation/Teste_lucas_petruci.zip
 .vscode
