@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: api/backend/Dockerfile
+    container_name: intuitive_care_backend
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: api/frontend/intuitive_care/Dockerfile
+    container_name: intuitive_care_frontend
+    ports:
+      - "5173:5173"
