@@ -10,7 +10,7 @@ Este módulo realiza o web scrapping para acessar a página de atualização do 
 
 1. Navegue até a pasta do projeto:
    ```bash
-   cd web_scraping
+   cd web_scraping/src
     ```
 
 2. Crie e Ative um Ambiente Virtual:
@@ -27,10 +27,9 @@ Este módulo realiza o web scrapping para acessar a página de atualização do 
    ```bash
     python main.py
     ```
-### Alterando o Driver
+### Alterando as variáveis
 
-Por padrão, o driver está configurado para utilizar o Chrome. Se desejar usar outro navegador, edite o arquivo driver_config.py.
-
+Todas as variáveis do web_scraping estão no config.py, sendo: BASE_URL, DOWLOAD_FOLDER, ZIP_FILE_NAME, WAIT_SECONDS, WEB_DRIVER. Caso deseje mudar, modifique esse arquivo.
 
 ## 2 - Tranformação de dados
 Este módulo extrai os dados do PDF do Anexo I baixado na parte 1, salva em formato .csv, compacta em um arquivo chamado Teste_lucas_petruci.zip, e substitui OD e AMB por sua descrição completa
