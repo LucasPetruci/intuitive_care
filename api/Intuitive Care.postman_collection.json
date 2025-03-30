@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "e3b9d21e-1846-468a-a28a-fb6c2e48ad27",
+		"name": "Intuitive Care",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21644760"
+	},
+	"item": [
+		{
+			"name": "Search_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search?search=19541931000125&column=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "19541931000125"
+						},
+						{
+							"key": "column",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search_all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/search?search=19541931000125&column=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "19541931000125"
+								},
+								{
+									"key": "column",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 30 Mar 2025 16:58:45 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "612"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Registro_ANS\": \"419761\",\n        \"CNPJ\": \"19541931000125\",\n        \"Razao_Social\": \"18 DE JULHO ADMINISTRADORA DE BENEFÍCIOS LTDA\",\n        \"Nome_Fantasia\": null,\n        \"Modalidade\": \"Administradora de Benefícios\",\n        \"Logradouro\": \"RUA CAPITÃO MEDEIROS DE REZENDE\",\n        \"Numero\": \"274\",\n        \"Complemento\": null,\n        \"Bairro\": \"PRAÇA DA BANDEIRA\",\n        \"Cidade\": \"Além Paraíba\",\n        \"UF\": \"MG\",\n        \"CEP\": \"36660000\",\n        \"DDD\": \"32\",\n        \"Telefone\": \"34624649\",\n        \"Fax\": null,\n        \"Endereco_eletronico\": \"contabilidade@cbnassessoria.com.br\",\n        \"Representante\": \"LUIZ HENRIQUE MARENDINO GONÇALVES\",\n        \"Cargo_Representante\": \"SÓCIO ADMINISTRADOR\",\n        \"Regiao_de_Comercializacao\": \"6\",\n        \"Data_Registro_ANS\": \"2015-05-19\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Search_cnpj",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search?search=19541931000125&column=cnpj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "19541931000125"
+						},
+						{
+							"key": "column",
+							"value": "cnpj"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search_cnpj",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/search?search=19541931000125&column=cnpj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "19541931000125"
+								},
+								{
+									"key": "column",
+									"value": "cnpj"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 30 Mar 2025 16:53:31 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "612"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Registro_ANS\": \"419761\",\n        \"CNPJ\": \"19541931000125\",\n        \"Razao_Social\": \"18 DE JULHO ADMINISTRADORA DE BENEFÍCIOS LTDA\",\n        \"Nome_Fantasia\": null,\n        \"Modalidade\": \"Administradora de Benefícios\",\n        \"Logradouro\": \"RUA CAPITÃO MEDEIROS DE REZENDE\",\n        \"Numero\": \"274\",\n        \"Complemento\": null,\n        \"Bairro\": \"PRAÇA DA BANDEIRA\",\n        \"Cidade\": \"Além Paraíba\",\n        \"UF\": \"MG\",\n        \"CEP\": \"36660000\",\n        \"DDD\": \"32\",\n        \"Telefone\": \"34624649\",\n        \"Fax\": null,\n        \"Endereco_eletronico\": \"contabilidade@cbnassessoria.com.br\",\n        \"Representante\": \"LUIZ HENRIQUE MARENDINO GONÇALVES\",\n        \"Cargo_Representante\": \"SÓCIO ADMINISTRADOR\",\n        \"Regiao_de_Comercializacao\": \"6\",\n        \"Data_Registro_ANS\": \"2015-05-19\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Search_registro_ans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search?search=419761&column=registroans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "419761"
+						},
+						{
+							"key": "column",
+							"value": "registroans"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search_registro_ans",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/search?search=419761&column=registroans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "419761"
+								},
+								{
+									"key": "column",
+									"value": "registroans"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 30 Mar 2025 16:53:34 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "612"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Registro_ANS\": \"419761\",\n        \"CNPJ\": \"19541931000125\",\n        \"Razao_Social\": \"18 DE JULHO ADMINISTRADORA DE BENEFÍCIOS LTDA\",\n        \"Nome_Fantasia\": null,\n        \"Modalidade\": \"Administradora de Benefícios\",\n        \"Logradouro\": \"RUA CAPITÃO MEDEIROS DE REZENDE\",\n        \"Numero\": \"274\",\n        \"Complemento\": null,\n        \"Bairro\": \"PRAÇA DA BANDEIRA\",\n        \"Cidade\": \"Além Paraíba\",\n        \"UF\": \"MG\",\n        \"CEP\": \"36660000\",\n        \"DDD\": \"32\",\n        \"Telefone\": \"34624649\",\n        \"Fax\": null,\n        \"Endereco_eletronico\": \"contabilidade@cbnassessoria.com.br\",\n        \"Representante\": \"LUIZ HENRIQUE MARENDINO GONÇALVES\",\n        \"Cargo_Representante\": \"SÓCIO ADMINISTRADOR\",\n        \"Regiao_de_Comercializacao\": \"6\",\n        \"Data_Registro_ANS\": \"2015-05-19\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Search_razao_social",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search?search=3S ADMINISTRADORA DE BENEFICIOS LTDA&column=Razao_Social",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "3S ADMINISTRADORA DE BENEFICIOS LTDA"
+						},
+						{
+							"key": "column",
+							"value": "Razao_Social"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search_razao_social",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/search?search=3S ADMINISTRADORA DE BENEFICIOS LTDA&column=Razao_Social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "3S ADMINISTRADORA DE BENEFICIOS LTDA"
+								},
+								{
+									"key": "column",
+									"value": "Razao_Social"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 30 Mar 2025 16:53:38 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "594"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Registro_ANS\": \"422908\",\n        \"CNPJ\": \"41788751000100\",\n        \"Razao_Social\": \"3S ADMINISTRADORA DE BENEFICIOS LTDA\",\n        \"Nome_Fantasia\": \"3S ADMINISTRADORA DE BENEFICIOS\",\n        \"Modalidade\": \"Administradora de Benefícios\",\n        \"Logradouro\": \"RUA ITÁLIA\",\n        \"Numero\": \"33\",\n        \"Complemento\": \"SALA 6\",\n        \"Bairro\": \"JARDIM BONFIGLIOLI\",\n        \"Cidade\": \"Jundiaí\",\n        \"UF\": \"SP\",\n        \"CEP\": \"13207280\",\n        \"DDD\": \"11\",\n        \"Telefone\": \"42263247\",\n        \"Fax\": null,\n        \"Endereco_eletronico\": \"pietrorocchi37@gmail.com\",\n        \"Representante\": \"ANAMELIA MONTEIRO GUERRA ROCCHI\",\n        \"Cargo_Representante\": \"SÓCIO ADMINISTRADOR\",\n        \"Regiao_de_Comercializacao\": \"6\",\n        \"Data_Registro_ANS\": \"2021-07-12\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
