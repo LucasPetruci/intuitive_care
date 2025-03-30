@@ -66,4 +66,22 @@ Neste módulo, temos os scripts .sql que criam as tabelas, inserem dados no banc
  4. Para conectar-se ao banco de dados utilizando o SQLTools no VSCode, utilize as seguintes credenciais do conteiner
     
  5. Acesse a pasta data_base/sql, primeiro rode o create_table.sql, depois o insert_data.sql(caso necessario mude o path) e depois o queries.sql
- 
+
+
+## 4 - API
+Este módulo implementa a API utilizando Python e FastAPI para fornecer endpoints que permitem buscar dados no arquivo CSV e uma interface web utilizando vue.js. A documentação do Postman está dentro da pasta API, basta importar o json.
+
+### Como Rodar
+  1. Navegue até a pasta da API
+   ```bash
+   cd api
+   ```
+ 2. Rode o docker-compose.yml
+   ```bash
+ docker-compose -p intuitive_care up --build -d
+   ```
+### Resultado
+
+https://github.com/user-attachments/assets/2812ad01-7b59-4a1d-a297-1a6dcc6733ae
+
+
