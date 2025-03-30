@@ -40,7 +40,7 @@ Este módulo extrai os dados do PDF do Anexo I baixado na parte 1, salva em form
       
    2. Navegue até a pasta do projeto:
    ```bash
-   cd data_transformation
+   cd data_transformation/src
    ```
    3. Execute o Script Principal:
    ```bash
